@@ -32,7 +32,7 @@ export class JsonEditor2Component implements ControlValueAccessor, OnInit {
 
   private _data: Object = {};
 
-  @Input() options: JsonEditorOptions = new JsonEditorOptions();
+  @Input() options: JsonEditorOptions2 = new JsonEditorOptions2();
   @Input('data')
   set data(value: Object) {
     this._data = value;
@@ -128,8 +128,8 @@ export class JsonEditor2Component implements ControlValueAccessor, OnInit {
     return this.editor.get();
   }
 
-  public getMode(): JsonEditorMode {
-    return this.editor.getMode() as JsonEditorMode;
+  public getMode(): JsonEditorMode2 {
+    return this.editor.getMode() as JsonEditorMode2;
   }
 
   public getName(): string {
@@ -144,7 +144,7 @@ export class JsonEditor2Component implements ControlValueAccessor, OnInit {
     this.editor.set(json);
   }
 
-  public setMode(mode: JsonEditorMode) {
+  public setMode(mode: JsonEditorMode2) {
     this.editor.setMode(mode);
   }
 
@@ -172,7 +172,7 @@ export class JsonEditor2Component implements ControlValueAccessor, OnInit {
     this.editor.search(query);
   }
 
-  public setOptions(newOptions: JsonEditorOptions) {
+  public setOptions(newOptions: JsonEditorOptions2) {
     if (this.editor) {
       this.editor.destroy();
     }
@@ -199,33 +199,33 @@ export class JsonEditor2Component implements ControlValueAccessor, OnInit {
   }
 }
 
-export type JsonEditorMode = 'tree' | 'view' | 'form' | 'code' | 'text';
+export type JsonEditorMode2 = 'tree' | 'view' | 'form' | 'code' | 'text';
 
-export interface JsonEditorTreeNode {
+export interface JsonEditorTreeNode2 {
   field: String,
   value: String,
   path: String[]
 }
 
-export interface IError {
+export interface IError2 {
   path: (string | number)[];
   message: string;
 }
 
-export class JsonEditorOptions {
+export class JsonEditorOptions2 {
   public ace: any;
   public ajv: Object;
   public onChange: () => void;
-  public onEditable: (node: JsonEditorTreeNode | {}) => boolean | { field: boolean, value: boolean };
+  public onEditable: (node: JsonEditorTreeNode2 | {}) => boolean | { field: boolean, value: boolean };
   public onError: (error: any) => void;
-  public onModeChange: (newMode: JsonEditorMode, oldMode: JsonEditorMode) => void;
-  public onValidate: (json: Object) => IError[];
+  public onModeChange: (newMode: JsonEditorMode2, oldMode: JsonEditorMode2) => void;
+  public onValidate: (json: Object) => IError2[];
   public escapeUnicode: boolean;
   public expandAll: boolean;
   public sortObjectKeys: boolean;
   public history: boolean;
-  public mode: JsonEditorMode;
-  public modes: JsonEditorMode[];
+  public mode: JsonEditorMode2;
+  public modes: JsonEditorMode2[];
   public name: String;
   public schema: Object;
   public search: boolean;
