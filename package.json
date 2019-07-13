@@ -35,7 +35,8 @@
     "@angular/platform-browser-dynamic": "^7.1.0",
     "@angular/router": "7.1.0",
     "core-js": "^2.4.1",
-    "jsoneditor": "git+https://github.com/sj-apiplatform/jsoneditor.git",
+    "gulp": "^4.0.2",
+    "jsoneditor": "^6.1.0",
     "rxjs": "^6.0.0-beta.1",
     "webpack": "^4.16.1",
     "zone.js": "0.8.26"
